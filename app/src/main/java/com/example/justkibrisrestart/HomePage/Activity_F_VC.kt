@@ -90,6 +90,14 @@ class Activity_F_VC : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         disableTouchFor3Seconds()
 
+        sendBar.clear()
+        sendNight.clear()
+        sendKonser.clear()
+        sendCafe.clear()
+        sendMeyhane.clear()
+        sendParti.clear()
+        sendEsnaf.clear()
+        sendRestoran.clear()
 
         val nightAdapter = ActivityAdapter(sendNight)
         val barAdapter = ActivityAdapter(sendBar)

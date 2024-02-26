@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="355dp"
-        android:layout_height="360dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         <!-- İçerdeki ConstraintLayout'un boyutları belirli bir yüksekliğe sahip olmalı -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="389dp"
             android:background="#000000">
 
             <ImageView
@@ -36,59 +36,61 @@
 
             <TextView
                 android:id="@+id/MekanName"
-                android:layout_width="341dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="7dp"
-                android:text="Text 1"
+                android:layout_width="345dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:text="Just Kibris"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="40sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <TextView
                 android:id="@+id/ActivitiyName"
-                android:layout_width="343dp"
-                android:layout_height="23dp"
-                android:layout_marginStart="7dp"
+                android:layout_width="345dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="7dp"
-                android:text="Text 2"
+                android:layout_marginEnd="5dp"
+                android:text="Parti Zamaniiiii"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/MekanName" />
 
             <TextView
-                android:id="@+id/activityDate"
-                android:layout_width="204dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="7dp"
-                android:text="Text 3"
+                android:id="@+id/activityPrice"
+                android:layout_width="156dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:text="Tutar : 100"
+                android:textAlignment="viewEnd"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toStartOf="@+id/activityPrice"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ActivitiyName" />
 
             <TextView
-                android:id="@+id/activityPrice"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="6dp"
-                android:text="Text 4"
+                android:id="@+id/activityDate"
+                android:layout_width="156dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="7dp"
+                android:text="  10.03.2024"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/activityDate"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ActivitiyName" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

@@ -17,10 +17,10 @@ class ActivityAdapter(private val activityList: List<ActivityClass>) :
 
     // Inner ViewHolder sınıfı
     class ActivityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val activityName: TextView = itemView.findViewById(R.id.MekanName)
-        val activityCategory: TextView = itemView.findViewById(R.id.ActivitiyName)
+        val activityPlace: TextView = itemView.findViewById(R.id.MekanName)
         val activityPrice: TextView = itemView.findViewById(R.id.activityPrice)
         val activityDate : TextView = itemView.findViewById(R.id.activityDate)
+        val activityName : TextView = itemView.findViewById(R.id.ActivitiyName)
         var image : ImageView = itemView.findViewById(R.id.imageView)
         // Diğer TextView'leri buraya ekleyebilirsiniz.
     }
@@ -37,9 +37,9 @@ class ActivityAdapter(private val activityList: List<ActivityClass>) :
         val currentItem = activityList[position]
 
         // TextView'lere veriyi atayın
+        holder.activityPlace.text = currentItem.mekanName
         holder.activityName.text = currentItem.activityName
-        holder.activityCategory.text = currentItem.activityCategory
-        holder.activityPrice.text = currentItem.activityPrice
+        holder.activityPrice.text = "Tutar : ${currentItem.activityPrice}"
         holder.activityDate.text = currentItem.activityDate
 
         Picasso.get()
