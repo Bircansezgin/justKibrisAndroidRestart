@@ -28,7 +28,26 @@
       "client_info": {
         "mobilesdk_app_id": "1:375366532614:android:22110b737177e776274d87",
         "android_client_info": {
-          "package_name": "com.example.justkibrisrestart"
+          "package_name": "com.softrestart.justkibrisrestart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDmusvzYBoPSYAa9O5OEGC3QO6oPMWAcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375366532614:android:f99589dc0da957be274d87",
+        "android_client_info": {
+          "package_name": "com.softrestart.justkibrisrestart"
         }
       },
       "oauth_client": [],

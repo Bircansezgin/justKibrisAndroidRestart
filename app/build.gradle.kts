@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.justkibrisrestart"
+    namespace = "com.softrestart.justkibrisrestart"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.justkibrisrestart"
+        applicationId = "com.softrestart.justkibrisrestart"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -51,6 +51,7 @@ dependencies {
     implementation ("com.google.android.material:material:1.0.0")
     implementation("com.google.firebase:firebase-firestore:24.10.2")
     implementation("com.squareup.picasso:picasso:2.71828")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
 
 
     testImplementation("junit:junit:4.13.2")

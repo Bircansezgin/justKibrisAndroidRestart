@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart
+package com.softrestart.justkibrisrestart
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.justkibrisrestart.HomePage.ActivityTabbarVC
-import com.example.justkibrisrestart.databinding.ActivityLoginVcBinding
+import com.softrestart.justkibrisrestart.HomePage.ActivityTabbarVC
+import com.softrestart.justkibrisrestart.databinding.ActivityLoginVcBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -26,23 +26,34 @@ class LoginVC : AppCompatActivity() {
     }
 
     // MARK: - Button
-    fun GuestButtonClick(view: View){
-        auth.signInAnonymously()
+    fun loginButton(view: View) {
+        val email = binding.epostaText.text.toString()
+        val password = binding.passwordText.text.toString()
+
+        // E-posta ve şifre alanlarının boş olup olmadığını kontrol et
+        if (email.isEmpty() || password.isEmpty()) {
+            showError("E-posta ve şifre alanlarını doldurun.")
+            return
+        }
+
+        // Firebase Authentication kullanarak giriş yap
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user: FirebaseUser? = auth.currentUser
-                    val intent = Intent(this, ActivityTabbarVC::class.java)
+                    val intent = Intent(this@LoginVC, ActivityTabbarVC::class.java)
                     startActivity(intent)
                     finish()
                 } else {
-                    // Giriş başarısız
-                    showError("Giriş başarısız! Daha Sonra Terkar Deneyiniz")
+                    // Giriş başarısız ise kullanıcıya hata mesajını göster
+                    showError("Giriş başarısız. E-posta veya şifrenizi kontrol edin.")
                 }
             }
-            .addOnFailureListener(this) { exception ->
-                // Giriş işlemi başarısız olduğunda gerçekleştirilecek
-                showError("Giriş sırasında hata oluştu: ${exception.message}")
-            }
+    }
+
+
+    fun registerButtonClick(view: View){
+        val intent = Intent(this@LoginVC, RegisterVC::class.java)
+        startActivity(intent)
     }
 
 

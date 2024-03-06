@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart.HomePage.ActivityDetail
+package com.softrestart.justkibrisrestart.HomePage.ActivityDetail
 
 import android.content.Intent
 import android.net.Uri
@@ -8,11 +8,11 @@ import android.text.Editable
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import com.example.justkibrisrestart.Adapter.RoundedCornersTransformation
-import com.example.justkibrisrestart.Class.ActivityClass
-import com.example.justkibrisrestart.R
-import com.example.justkibrisrestart.databinding.ActivityDetailsBinding
-import com.example.justkibrisrestart.databinding.ActivityTabbarVcBinding
+import com.softrestart.justkibrisrestart.Adapter.RoundedCornersTransformation
+import com.softrestart.justkibrisrestart.Class.ActivityClass
+import com.softrestart.justkibrisrestart.R
+import com.softrestart.justkibrisrestart.databinding.ActivityDetailsBinding
+import com.softrestart.justkibrisrestart.databinding.ActivityTabbarVcBinding
 import com.squareup.picasso.Picasso
 
 class Activity_Details : AppCompatActivity() {

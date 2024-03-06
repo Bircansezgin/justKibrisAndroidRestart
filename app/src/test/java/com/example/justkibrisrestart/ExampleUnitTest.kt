@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart
+package com.softrestart.justkibrisrestart
 
 import org.junit.Test
 

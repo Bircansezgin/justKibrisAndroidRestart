@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart.Adapter
+package com.softrestart.justkibrisrestart.Adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.justkibrisrestart.Class.ActivityClass
-import com.example.justkibrisrestart.HomePage.ActivityDetail.Activity_Details
-import com.example.justkibrisrestart.R
+import com.softrestart.justkibrisrestart.Class.ActivityClass
+import com.softrestart.justkibrisrestart.HomePage.ActivityDetail.Activity_Details
+import com.softrestart.justkibrisrestart.R
 import com.squareup.picasso.Picasso
 
 class ActivityAdapter(private val activityList: List<ActivityClass>) :

@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart.HomePage
+package com.softrestart.justkibrisrestart.HomePage
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -12,9 +12,9 @@ import android.view.WindowManager
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.justkibrisrestart.Adapter.ActivityAdapter
-import com.example.justkibrisrestart.Class.ActivityClass
-import com.example.justkibrisrestart.R
+import com.softrestart.justkibrisrestart.Adapter.ActivityAdapter
+import com.softrestart.justkibrisrestart.Class.ActivityClass
+import com.softrestart.justkibrisrestart.R
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import java.util.logging.Handler
@@ -23,54 +23,34 @@ import java.util.logging.Handler
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-val db = Firebase.firestore
-val sendBar = mutableListOf<ActivityClass>()
-val sendNight = mutableListOf<ActivityClass>()
-val sendKonser = mutableListOf<ActivityClass>()
-val sendCafe = mutableListOf<ActivityClass>()
-val sendMeyhane = mutableListOf<ActivityClass>()
-val sendParti = mutableListOf<ActivityClass>()
-val sendEsnaf = mutableListOf<ActivityClass>()
-val sendRestoran = mutableListOf<ActivityClass>()
-private lateinit var progressBar: ProgressBar
+
 
 
 class Activity_F_VC : Fragment() {
+
+    private var dataAlreadyFetched = false
+    private lateinit var view: View
+    private lateinit var progressBar: ProgressBar
+
+    val db = Firebase.firestore
+    val sendBar = mutableListOf<ActivityClass>()
+    val sendNight = mutableListOf<ActivityClass>()
+    val sendKonser = mutableListOf<ActivityClass>()
+    val sendCafe = mutableListOf<ActivityClass>()
+    val sendMeyhane = mutableListOf<ActivityClass>()
+    val sendParti = mutableListOf<ActivityClass>()
+    val sendEsnaf = mutableListOf<ActivityClass>()
+    val sendRestoran = mutableListOf<ActivityClass>()
+
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
-
-    private fun disableTouchFor3Seconds() {
-        // ProgressBar'ı görünür yap
-        progressBar.visibility = View.VISIBLE
-
-        // Ekranı dokunmaya kapat
-        activity?.window?.setFlags(
-            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-        )
-
-        // 3 saniye sonra ProgressBar'ı gizle ve dokunmayı etkinleştir
-        android.os.Handler(Looper.getMainLooper()).postDelayed({
-            progressBar.visibility = View.GONE
-            // Kullanıcı dokunmasını etkinleştir
-            enableTouch()
-        }, 3000)
-    }
-
-    private fun enableTouch() {
-        // Ekranı dokunmaya aç
-        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-    }
-
 
 
     override fun onCreateView(
@@ -78,9 +58,9 @@ class Activity_F_VC : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_activity_v_c, container, false)
-
+        view = inflater.inflate(R.layout.fragment_activity_v_c, container, false)
         progressBar = view.findViewById(R.id.progressBar)
+        setupFetchActivity(view)
 
         return view
     }
@@ -88,16 +68,23 @@ class Activity_F_VC : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         disableTouchFor3Seconds()
 
-        sendBar.clear()
-        sendNight.clear()
-        sendKonser.clear()
-        sendCafe.clear()
-        sendMeyhane.clear()
-        sendParti.clear()
-        sendEsnaf.clear()
-        sendRestoran.clear()
+        // onViewCreated içinde view parametresini kullanarak setupFetchActivity fonksiyonunu çağır
+        // Verileri daha önce çekmediyse ve çekecekse
+        if (!dataAlreadyFetched) {
+            setupFetchActivity(view)
+            dataAlreadyFetched = true
+        }
+    }
+
+
+
+
+    fun setupFetchActivity(view: View) {
+
+
 
         val nightAdapter = ActivityAdapter(sendNight)
         val barAdapter = ActivityAdapter(sendBar)
@@ -118,15 +105,35 @@ class Activity_F_VC : Fragment() {
         view.findViewById<RecyclerView>(R.id.RestoranRecycler).adapter = restoranAdapter
         view.findViewById<RecyclerView>(R.id.EsnafRecycler).adapter = esnafAdapter
 
+        sendBar.clear()
+        sendNight.clear()
+        sendKonser.clear()
+        sendCafe.clear()
+        sendMeyhane.clear()
+        sendParti.clear()
+        sendEsnaf.clear()
+        sendRestoran.clear()
+
 
         // Firestore veritabanı referansı
         val db = Firebase.firestore
 
 // Veritabanından tüm etkinlikleri çekme
-        db.collection("etkinlikler")
+        db.collection("etkinlikler").whereEqualTo("isActive", 1)
             .get()
             .addOnSuccessListener { result ->
+
+                sendBar.clear()
+                sendNight.clear()
+                sendKonser.clear()
+                sendCafe.clear()
+                sendMeyhane.clear()
+                sendParti.clear()
+                sendEsnaf.clear()
+                sendRestoran.clear()
+
                 for (document in result) {
+
                     // Firestore'dan çekilen belgenin ActivityClass modeline dönüştürülmesi
                     val activity = document.toObject(ActivityClass::class.java)
 
@@ -154,7 +161,6 @@ class Activity_F_VC : Fragment() {
 
                 }
 
-                // Veriler RecyclerView'lara atandıktan sonra adapter'ı güncelle
                 updateRecyclerViews()
             }
             .addOnFailureListener { exception ->
@@ -194,7 +200,7 @@ class Activity_F_VC : Fragment() {
             adapter = partiAdapter
         }
 
-        view.findViewById<RecyclerView>(R.id.EsnafRecycler).apply {
+        view.findViewById<RecyclerView>(R.id.EsnafRecycler)?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = esnafAdapter
         }
@@ -204,9 +210,13 @@ class Activity_F_VC : Fragment() {
             adapter = restoranAdapter
         }
 
+
+
     }
 
     fun updateRecyclerViews() {
+
+
         // Adapter'ları oluşturun ve RecyclerView'lara atayın
         val barAdapter = ActivityAdapter(sendBar)
         val nightAdapter = ActivityAdapter(sendNight)
@@ -214,6 +224,8 @@ class Activity_F_VC : Fragment() {
         val cafeAdapter = ActivityAdapter(sendCafe)
         val meyhaneAdapter = ActivityAdapter(sendMeyhane)
         val partiAdapter = ActivityAdapter(sendParti)
+        val esnafAdapter = ActivityAdapter(sendEsnaf)
+        val restoranAdaptor = ActivityAdapter(sendRestoran)
 
         // RecyclerView'lara adapter'ları atayın
         view?.findViewById<RecyclerView>(R.id.nigthClubRecycler)?.adapter = nightAdapter
@@ -222,11 +234,35 @@ class Activity_F_VC : Fragment() {
         view?.findViewById<RecyclerView>(R.id.CafeRecycler)?.adapter = cafeAdapter
         view?.findViewById<RecyclerView>(R.id.MeyhaneRecycler)?.adapter = meyhaneAdapter
         view?.findViewById<RecyclerView>(R.id.PartyRecycler)?.adapter = partiAdapter
+        view?.findViewById<RecyclerView>(R.id.EsnafRecycler)?.adapter = esnafAdapter
+        view?.findViewById<RecyclerView>(R.id.RestoranRecycler)?.adapter = restoranAdaptor
+
     }
 
 
 
+    private fun disableTouchFor3Seconds() {
+        // ProgressBar'ı görünür yap
+        progressBar.visibility = View.VISIBLE
 
+        // Ekranı dokunmaya kapat
+        activity?.window?.setFlags(
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+        )
+
+        // 3 saniye sonra ProgressBar'ı gizle ve dokunmayı etkinleştir
+        android.os.Handler(Looper.getMainLooper()).postDelayed({
+            progressBar.visibility = View.GONE
+            // Kullanıcı dokunmasını etkinleştir
+            enableTouch()
+        }, 1500)
+    }
+
+    private fun enableTouch() {
+        // Ekranı dokunmaya aç
+        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+    }
 
 
 

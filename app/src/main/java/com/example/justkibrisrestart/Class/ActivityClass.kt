@@ -1,4 +1,4 @@
-package com.example.justkibrisrestart.Class
+package com.softrestart.justkibrisrestart.Class
 
 import com.google.firebase.Timestamp
 import java.io.Serializable
