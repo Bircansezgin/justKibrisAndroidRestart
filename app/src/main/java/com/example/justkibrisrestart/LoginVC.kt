@@ -25,12 +25,13 @@ class LoginVC : AppCompatActivity() {
 
     }
 
+
     // MARK: - Button
     fun loginButton(view: View) {
         val email = binding.epostaText.text.toString()
         val password = binding.passwordText.text.toString()
 
-        // E-posta ve şifre alanlarının boş olup olmadığını kontrol et
+
         if (email.isEmpty() || password.isEmpty()) {
             showError("E-posta ve şifre alanlarını doldurun.")
             return

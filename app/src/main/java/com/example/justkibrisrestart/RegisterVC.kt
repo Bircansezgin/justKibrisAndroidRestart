@@ -82,7 +82,7 @@ class RegisterVC : AppCompatActivity() {
         val name = binding.firstNameEditText.text.toString()
         val surname = binding.lastNameEditText.text.toString()
         val username = binding.usernameText.text.toString()
-        val age = binding.ageText.text.toString().toInt()
+        val age = binding.ageText.text.toString().toString()
         val email = binding.emailText.text.toString()
         val password = binding.passwordText.text.toString()
         val phone = binding.phoneText.text.toString()

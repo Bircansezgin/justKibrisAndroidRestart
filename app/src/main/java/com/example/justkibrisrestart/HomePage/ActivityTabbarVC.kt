@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import com.example.justkibrisrestart.Firsatlar.Firsatlar_F_VC
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.softrestart.justkibrisrestart.HomePage.Activity_F_VC
 import com.softrestart.justkibrisrestart.Profil.Profile_F_VC
@@ -25,7 +26,9 @@ class ActivityTabbarVC : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.etkinlikler -> replaceFragment(Activity_F_VC())
+                R.id.firsatlar -> replaceFragment(Firsatlar_F_VC())
                 R.id.profile -> replaceFragment(Profile_F_VC())
+
 
 
                 else -> {
