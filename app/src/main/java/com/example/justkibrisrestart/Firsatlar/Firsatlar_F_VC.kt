@@ -1,10 +1,16 @@
-package com.example.justkibrisrestart.Firsatlar
+package com.softrestart.justkibrisrestart.Firsatlar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.softrestart.justkibrisrestart.Adapter.firsatlarAdapter
+import com.softrestart.justkibrisrestart.Class.FirsatlarC
 import com.softrestart.justkibrisrestart.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,16 +24,11 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Firsatlar_F_VC : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -38,23 +39,36 @@ class Firsatlar_F_VC : Fragment() {
         return inflater.inflate(R.layout.fragment_firsatlar__f__v_c, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Firsatlar_F_VC.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Firsatlar_F_VC().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        firsatlarActivities()
+    }
+
+    private fun firsatlarActivities() {
+        val db = Firebase.firestore
+
+        db.collection("firsatlar")
+            .whereEqualTo("isActive", 1)
+            .get()
+            .addOnSuccessListener { result ->
+                val firsatlarList = mutableListOf<FirsatlarC>()
+                for (document in result) {
+                    val firsatlarFB = document.toObject(FirsatlarC::class.java)
+                    firsatlarList.add(firsatlarFB)
                 }
+                updateRecycler(firsatlarList)
             }
     }
+
+
+    fun updateRecycler(gelenFirsatlar: List<FirsatlarC>) {
+        val firsatAdapter = firsatlarAdapter(gelenFirsatlar)
+
+        view?.findViewById<RecyclerView>(R.id.firsatRecycler)?.adapter = firsatAdapter
+        view?.findViewById<RecyclerView>(R.id.firsatRecycler)?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = firsatAdapter
+        }
+    }
+
 }

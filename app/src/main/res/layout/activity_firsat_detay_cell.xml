@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/newbackgroundjk"
+    tools:context=".Firsatlar.firsatDetayCell">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/newbackgroundjk">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="1800dp"
+            android:rotationY="0"
+            tools:layout_editor_absoluteY="1dp">
+
+            <View
+                android:id="@+id/detayImage"
+                android:layout_width="370dp"
+                android:layout_height="370dp"
+                android:background="@drawable/night_club_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025" />
+
+            <ImageView
+                android:id="@+id/firsatDetayImageView"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/detayImage"
+                app:layout_constraintEnd_toEndOf="@+id/detayImage"
+                app:layout_constraintStart_toStartOf="@+id/detayImage"
+                app:layout_constraintTop_toTopOf="@+id/detayImage"
+                app:layout_constraintVertical_bias="0.45999998"
+                app:srcCompat="@drawable/barcode" />
+
+            <View
+                android:id="@+id/detayView"
+                android:layout_width="370dp"
+                android:layout_height="940dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ada_post_posts_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detayImage"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/detayView1"
+                android:layout_width="341dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="-30dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.267" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fırsat Detayları"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/detayView1"
+                app:layout_constraintEnd_toEndOf="@+id/detayView1"
+                app:layout_constraintStart_toStartOf="@+id/detayView1"
+                app:layout_constraintTop_toTopOf="@+id/detayView1" />
+
+            <View
+                android:id="@+id/firsatDetayView2"
+                android:layout_width="341dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.318" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Fırsat Adı"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView2"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView2" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="60dp"
+                android:text="Tarih"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView2"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView2" />
+
+            <View
+                android:id="@+id/firsatDetayView3"
+                android:layout_width="341dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-70dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.573" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Fırsat Tarihi"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayView3"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView3"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView3" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Giris 150 tl"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayView3"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView3"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView3" />
+
+            <View
+                android:id="@+id/firsatDetayView4"
+                android:layout_width="341dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="-60dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.442" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text="Fırsat Açıklaması"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView4"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView4" />
+
+            <TextView
+                android:id="@+id/firsatAciklama12"
+                android:layout_width="311dp"
+                android:layout_height="230dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="56dp"
+                android:text="Cheetah Girne"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView4"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView4" />
+
+            <View
+                android:id="@+id/firsatDetayView5"
+                android:layout_width="343dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="-230dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.656" />
+
+            <TextView
+                android:id="@+id/firsatDetaytextView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Fırsat İndirim Durumu"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayView5"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView5"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView5" />
+
+            <View
+                android:id="@+id/firsatDetayView7"
+                android:layout_width="170dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="-380dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.72" />
+
+            <View
+                android:id="@+id/firsatDetayView6"
+                android:layout_width="170dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="-380dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.124"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.72" />
+
+            <TextView
+                android:id="@+id/yenıFıyatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yeni Fiyat"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/firsatDetayView7"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayView7"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView7"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView7"
+                app:layout_constraintVertical_bias="0.175" />
+
+            <TextView
+                android:id="@+id/eskıFıyatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eski Fiyat"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/firsatDetayView6"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayView6"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayView6"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayView6"
+                app:layout_constraintVertical_bias="0.175" />
+
+            <View
+                android:id="@+id/firsatDetayview9"
+                android:layout_width="341dp"
+                android:layout_height="53dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="@+id/detayView"
+                app:layout_constraintEnd_toEndOf="@+id/detayView"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toStartOf="@+id/detayView"
+                app:layout_constraintTop_toBottomOf="@+id/firsatDetayView6"
+                app:layout_constraintVertical_bias="0.098" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fırsat Durumu"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/firsatDetayview9"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayview9"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayview9"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayview9" />
+
+            <View
+                android:id="@+id/firsatDetayview10"
+                android:layout_width="341dp"
+                android:layout_height="70dp"
+                android:background="@drawable/text_input_layout_background"
+                app:layout_constraintBottom_toBottomOf="@+id/detayView"
+                app:layout_constraintEnd_toEndOf="@+id/detayView"
+                app:layout_constraintHorizontal_bias="0.517"
+                app:layout_constraintStart_toStartOf="@+id/detayView"
+                app:layout_constraintTop_toBottomOf="@+id/firsatDetayview9"
+                app:layout_constraintVertical_bias="0.193" />
+
+            <Button
+                android:id="@+id/firsatDetayIncelebutton"
+                android:layout_width="330dp"
+                android:layout_height="53dp"
+                android:backgroundTint="#458E07"
+                android:onClick="satinAl"
+                android:text="Satın Al"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/firsatDetayview10"
+                app:layout_constraintEnd_toEndOf="@+id/firsatDetayview10"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintStart_toStartOf="@+id/firsatDetayview10"
+                app:layout_constraintTop_toTopOf="@+id/firsatDetayview10" />
+
+            <TextView
+                android:id="@+id/firsatEskıFıyatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintTop_toBottomOf="@+id/eskıFıyatText"
+                app:layout_constraintEnd_toEndOf="@+id/eskıFıyatText"
+                app:layout_constraintStart_toStartOf="@+id/eskıFıyatText"
+                tools:layout_editor_absoluteY="1286dp"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_marginTop="5dp"
+                />
+
+
+            <TextView
+                android:id="@+id/firsatYenıFıyatText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="TextView"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/yenıFıyatText"
+                app:layout_constraintStart_toStartOf="@+id/yenıFıyatText"
+                app:layout_constraintTop_toBottomOf="@+id/yenıFıyatText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>

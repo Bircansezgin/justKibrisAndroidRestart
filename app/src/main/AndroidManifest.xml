@@ -18,8 +18,13 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterVC"
+            android:name="com.example.justkibrisrestart.Login.RegisterVC"
             android:exported="false" />
+        <activity
+            android:name=".Firsatlar.firsatDetayCell"
+            android:label="Firsat Detay Cell">
+        </activity>
+
         <activity
             android:name=".HomePage.ActivityDetail.Activity_Details"
             android:exported="false" />
@@ -27,7 +32,7 @@
             android:name=".HomePage.ActivityTabbarVC"
             android:exported="false" />
         <activity
-            android:name=".LoginVC"
+            android:name="com.example.justkibrisrestart.Login.LoginVC"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
