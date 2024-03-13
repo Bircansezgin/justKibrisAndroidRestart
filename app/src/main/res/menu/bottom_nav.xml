@@ -13,7 +13,14 @@
         android:layout_height="wrap_content"
         android:title="Arama"
         android:id="@+id/search"
-        android:icon="@drawable/icon_search"/>
+        android:icon="@drawable/icon_search_100"/>
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Ada Post"
+        android:id="@+id/adaPost"
+        android:icon="@drawable/adapost_icon1"/>
 
     <item
         android:layout_width="wrap_content"
