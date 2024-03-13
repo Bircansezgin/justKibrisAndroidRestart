@@ -32,7 +32,7 @@
             android:name=".HomePage.ActivityTabbarVC"
             android:exported="false" />
         <activity
-            android:name="com.example.justkibrisrestart.Login.LoginVC"
+            android:name="com.softrestart.justkibrisrestart.Login.LoginVC"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

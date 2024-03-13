@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.example.justkibrisrestart.search.Search_F_VC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <View
+            android:id="@+id/searchHeaderView"
+            android:layout_width="391dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/searchHeaderLabel"
+            android:layout_width="374dp"
+            android:layout_height="54dp"
+            android:text="Lütfen Arama Yapmak İstediğiniz Kategoriyi Seçin"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/searchHeaderView"
+            app:layout_constraintEnd_toEndOf="@+id/searchHeaderView"
+            app:layout_constraintStart_toStartOf="@+id/searchHeaderView"
+            app:layout_constraintTop_toTopOf="@+id/searchHeaderView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchItemReceycler"
+            android:layout_width="376dp"
+            android:layout_height="670dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchHeaderView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

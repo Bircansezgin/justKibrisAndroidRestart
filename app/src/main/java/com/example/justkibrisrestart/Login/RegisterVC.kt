@@ -11,6 +11,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.softrestart.justkibrisrestart.Login.LoginVC
 import com.softrestart.justkibrisrestart.databinding.ActivityRegisterVcBinding
 import java.util.UUID
 

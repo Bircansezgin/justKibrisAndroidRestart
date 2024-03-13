@@ -49,7 +49,7 @@ class Activity_F_VC : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setHasOptionsMenu(true)
     }
 
 
@@ -57,7 +57,6 @@ class Activity_F_VC : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_activity_v_c, container, false)
         progressBar = view.findViewById(R.id.progressBar)
         setupFetchActivity(view)
@@ -66,18 +65,19 @@ class Activity_F_VC : Fragment() {
     }
 
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        disableTouchFor3Seconds()
 
         // onViewCreated içinde view parametresini kullanarak setupFetchActivity fonksiyonunu çağır
         // Verileri daha önce çekmediyse ve çekecekse
         if (!dataAlreadyFetched) {
+            disableTouchFor3Seconds()
             setupFetchActivity(view)
             dataAlreadyFetched = true
         }
     }
+
 
 
 
@@ -268,15 +268,6 @@ class Activity_F_VC : Fragment() {
 
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ActivityVC.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             Activity_F_VC().apply {
