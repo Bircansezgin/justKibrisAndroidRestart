@@ -1,7 +1,9 @@
 package com.softrestart.justkibrisrestart.Profil
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +45,16 @@ class Profile_F_VC : Fragment() {
             val intent = Intent(activity, ProfileDetail::class.java)
             startActivity(intent)
         }
+
+        binding.wpGo.setOnClickListener {
+            Log.e("person", "CALISTI")
+
+            val phoneNumber = "+905488664788"
+            val url = "https://api.whatsapp.com/send?phone=$phoneNumber"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
     }
 
     private fun setupUI_userProfile() {
@@ -50,9 +62,10 @@ class Profile_F_VC : Fragment() {
         binding.emailPersonLabel.text = userSingleton.email
 
         Picasso.get()
-            .load(userSingleton.userImageURL)
+            .load(userSingleton.userImageURL) // Görüntüyü ortalamak için
             .transform(RoundedCornersTransformation(30f)) // Kenar yarıçapını ayarlayabilirsiniz
             .into(binding.userImageView)
+
     }
 
     companion object {

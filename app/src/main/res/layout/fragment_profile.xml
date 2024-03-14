@@ -29,48 +29,56 @@ tools:context="com.softrestart.justkibrisrestart.HomePage.ActivityDetail">
                 android:layout_height="900dp">
 
                 <!-- Top Image -->
+
+                <!-- Profile Image -->
+
+                <!-- User Name -->
+
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="396dp"
+                    android:layout_width="434dp"
                     android:layout_height="162dp"
                     android:layout_marginStart="-5dp"
                     android:layout_marginEnd="-5dp"
                     android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.48"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/top_background" />
 
-                <!-- Profile Image -->
                 <ImageView
                     android:id="@+id/userImageView"
-                    android:layout_width="157dp"
-                    android:layout_height="137dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="40dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    app:srcCompat="@drawable/baseline_account_circle_24" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <!-- User Name -->
+
+                <!-- Email Address -->
                 <TextView
                     android:id="@+id/namePersonLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="144dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="145dp"
                     android:text="Just Kıbrıs"
+                    android:textColor="#000000"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/userImageView"
-                    app:layout_constraintStart_toStartOf="@+id/userImageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/userImageView" />
 
-                <!-- Email Address -->
                 <TextView
                     android:id="@+id/emailPersonLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="justkibris@gmail.com"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/namePersonLabel"
                     app:layout_constraintStart_toStartOf="@+id/namePersonLabel"
@@ -78,8 +86,8 @@ tools:context="com.softrestart.justkibrisrestart.HomePage.ActivityDetail">
 
                 <!-- Buttons Section -->
                 <LinearLayout
-                    android:layout_width="417dp"
-                    android:layout_height="574dp"
+                    android:layout_width="412dp"
+                    android:layout_height="522dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -124,7 +132,7 @@ tools:context="com.softrestart.justkibrisrestart.HomePage.ActivityDetail">
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/button5"
+                        android:id="@+id/wpGo"
                         style="@android:style/Widget.Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
