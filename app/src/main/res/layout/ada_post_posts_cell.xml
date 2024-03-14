@@ -102,7 +102,7 @@
         android:layout_width="343dp"
         android:layout_height="293dp"
         android:background="@drawable/image_radius_background"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@+id/view9"
         app:layout_constraintEnd_toEndOf="@+id/view9"
         app:layout_constraintStart_toStartOf="@+id/view9"

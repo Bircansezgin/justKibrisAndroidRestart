@@ -27,7 +27,8 @@ class TopUsersAdapter(private val topUsersList: List<TopUser>, private val onIte
             onItemClicked(currentItem)
         }
 
-        Picasso.get().load(currentItem.photoURL).into(holder.userPostProfile)
+        Picasso.get().load(currentItem.photoURL).transform(RoundedCornersTransformation(130f)).into(holder.userPostProfile)
+
     }
 
     override fun getItemCount(): Int {

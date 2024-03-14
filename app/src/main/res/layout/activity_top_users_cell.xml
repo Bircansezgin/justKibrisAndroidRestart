@@ -9,7 +9,6 @@
         android:id="@+id/userPostProfile1"
         android:layout_width="56dp"
         android:layout_height="62dp"
-        android:scaleType="centerCrop"
         android:src="@drawable/barcode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

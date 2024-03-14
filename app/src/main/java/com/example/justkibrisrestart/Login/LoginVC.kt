@@ -29,31 +29,31 @@ class LoginVC : AppCompatActivity() {
     // MARK: - Button
     fun loginButton(view: View) {
 
-        val intent = Intent(this@LoginVC, ActivityTabbarVC::class.java)
-        startActivity(intent)
-        finish()
+//        val intent = Intent(this@LoginVC, ActivityTabbarVC::class.java)
+//        startActivity(intent)
+//        finish()
 
-//        val email = binding.epostaText.text.toString()
-//        val password = binding.passwordText.text.toString()
-//
-//
-//        if (email.isEmpty() || password.isEmpty()) {
-//            showError("E-posta ve şifre alanlarını doldurun.")
-//            return
-//        }
-//
-//        // Firebase Authentication kullanarak giriş yap
-//        auth.signInWithEmailAndPassword(email, password)
-//            .addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    val intent = Intent(this@LoginVC, ActivityTabbarVC::class.java)
-//                    startActivity(intent)
-//                    finish()
-//                } else {
-//                    // Giriş başarısız ise kullanıcıya hata mesajını göster
-//                    showError("Giriş başarısız. E-posta veya şifrenizi kontrol edin.")
-//                }
-//            }
+        val email = binding.epostaText.text.toString()
+        val password = binding.passwordText.text.toString()
+
+
+        if (email.isEmpty() || password.isEmpty()) {
+            showError("E-posta ve şifre alanlarını doldurun.")
+            return
+        }
+
+        // Firebase Authentication kullanarak giriş yap
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val intent = Intent(this@LoginVC, ActivityTabbarVC::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    // Giriş başarısız ise kullanıcıya hata mesajını göster
+                    showError("Giriş başarısız. E-posta veya şifrenizi kontrol edin.")
+                }
+            }
     }
 
 

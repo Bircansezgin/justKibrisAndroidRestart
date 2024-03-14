@@ -1,15 +1,22 @@
 package com.softrestart.justkibrisrestart.Profil
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.softrestart.justkibrisrestart.Adapter.RoundedCornersTransformation
+import com.softrestart.justkibrisrestart.Class.userSingleton
 import com.softrestart.justkibrisrestart.R
+import com.softrestart.justkibrisrestart.databinding.FragmentProfileBinding
+import com.squareup.picasso.Picasso
 
 // TODO: Rename parameter arguments, choose names that match
 
 class Profile_F_VC : Fragment() {
+
+    private lateinit var binding: FragmentProfileBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,12 +24,35 @@ class Profile_F_VC : Fragment() {
 
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View {
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupUI_userProfile()
+
+        // "Benim Hesabım" butonunu bulma ve tıklama işlevselliği ekleme
+        binding.benimProfil.setOnClickListener {
+            val intent = Intent(activity, ProfileDetail::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun setupUI_userProfile() {
+        binding.namePersonLabel.text = userSingleton.name + " " + userSingleton.surname
+        binding.emailPersonLabel.text = userSingleton.email
+
+        Picasso.get()
+            .load(userSingleton.userImageURL)
+            .transform(RoundedCornersTransformation(30f)) // Kenar yarıçapını ayarlayabilirsiniz
+            .into(binding.userImageView)
     }
 
     companion object {

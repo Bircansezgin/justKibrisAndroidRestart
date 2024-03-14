@@ -1,6 +1,8 @@
 package com.softrestart.justkibrisrestart.HomePage
 
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -10,13 +12,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.softrestart.justkibrisrestart.Adapter.ActivityAdapter
 import com.softrestart.justkibrisrestart.Class.ActivityClass
 import com.softrestart.justkibrisrestart.R
 import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
+import com.softrestart.justkibrisrestart.Class.userSingleton
 import java.util.logging.Handler
 
 // TODO: Rename parameter arguments, choose names that match
@@ -50,6 +56,8 @@ class Activity_F_VC : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        getUserData()
+
     }
 
 
@@ -70,12 +78,11 @@ class Activity_F_VC : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // onViewCreated içinde view parametresini kullanarak setupFetchActivity fonksiyonunu çağır
-        // Verileri daha önce çekmediyse ve çekecekse
-        if (!dataAlreadyFetched) {
+
             disableTouchFor3Seconds()
             setupFetchActivity(view)
             dataAlreadyFetched = true
-        }
+
     }
 
 
@@ -264,6 +271,84 @@ class Activity_F_VC : Fragment() {
         activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
     }
 
+
+    fun getUserData() {
+        Log.e("person", "GET USER OKEY")
+
+        val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email
+        if (currentUserEmail.isNullOrEmpty()) {
+            println("Kullanıcı oturumu açık değil.")
+            return
+        }
+        Log.e("person", "getUserData running")
+        val firebaseDB = FirebaseFirestore.getInstance()
+        firebaseDB.collection("userInformation")
+            .whereEqualTo("email", currentUserEmail)
+            .addSnapshotListener { snapshot, error ->
+                if (error != null) {
+                    println("Veri alınırken hata oluştu: ${error.localizedMessage}")
+                    return@addSnapshotListener
+                }
+
+                if (snapshot != null && !snapshot.isEmpty) {
+                    Log.e("person", "snapshot running")
+                    for (document in snapshot.documents) {
+                        document.data?.let { updateUserInfo(it) }
+                    }
+                } else {
+                    println("Kullanıcı bilgileri bulunamadı.")
+                }
+            }
+    }
+
+    private fun updateUserInfo(data: Map<String, Any>) {
+        Log.e("person", "updateUserInfo OKEY")
+
+        Log.e("person", "updateUserInfo running")
+        userSingleton.email = data["email"] as? String ?: ""
+        userSingleton.name = data["name"] as? String ?: ""
+        userSingleton.surname = data["surname"] as? String ?: ""
+        userSingleton.username = data["username"] as? String ?: ""
+        userSingleton.age = data["age"] as? String ?: ""
+        userSingleton.userImageURL = data["photoURL"] as? String ?: ""
+        userSingleton.phoneNumber = data["phoneNumber"] as? String ?: ""
+        userSingleton.userID = data["userID"] as? String ?: ""
+        userSingleton.userDocumentID = data["documentID"] as? String ?: ""
+        userSingleton.userWalletID = data["userWalletID"] as? String ?: ""
+        userSingleton.userWalletAmount = (data["userWallet"] as? Long ?: 0).toInt()
+        userSingleton.userWalleQRCode = data["userWalletQRCodeData"] as? String ?: ""
+        userSingleton.userActive = (data["userActive"] as? Long ?: 0).toInt()
+
+        Log.e("person", "userID ${userSingleton.userID}")
+        Log.e("person", "username ${userSingleton.username}")
+
+        if (userSingleton.userActive == 0){
+            showAlertDialog(requireContext(), "Hesap Durumu", "Hesabiniz banlandi!")
+        }
+
+
+
+        val username = userSingleton.username
+
+        val welcomeMessage = if (!username.isNullOrEmpty()) {
+            "Hoş Geldiniz, $username"
+        } else {
+            "Hoş Geldiniz kk"
+        }
+        view.findViewById<TextView>(R.id.welcomeLabel).text = welcomeMessage
+    }
+
+    fun showAlertDialog(context: Context, title: String, message: String) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK") { dialog, which ->
+            // OK butonuna tıklandığında yapılacak işlemler
+            dialog.dismiss()
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }
 
 
 

@@ -24,6 +24,7 @@
             android:name=".Firsatlar.firsatDetayCell"
             android:label="Firsat Detay Cell">
         </activity>
+        <activity android:name=".Profil.ProfileDetail"/>
 
         <activity
             android:name=".HomePage.ActivityDetail.Activity_Details"

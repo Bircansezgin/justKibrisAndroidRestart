@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:hapticFeedbackEnabled="false">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="318dp"
+        android:layout_height="248dp"
+        android:layout_marginBottom="28dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/profil_1" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="338dp"
+        android:layout_height="470dp"
+        android:background="@drawable/white_corder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.803" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="Kullanıcı Bilgilerim"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <View
+        android:id="@+id/view43"
+        android:layout_width="250dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/white_corder"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <View
+        android:id="@+id/view44"
+        android:layout_width="250dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="336dp"
+        android:background="@drawable/white_corder"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Kullanici Adi"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/kullaniciAdi"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/kullaniciAdi"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_border"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <View
+        android:id="@+id/ePosta"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_border"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.381" />
+
+    <View
+        android:id="@+id/telefonNumarasi"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_border"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.547" />
+
+    <View
+        android:id="@+id/kullaniciYasi"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_border"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.742" />
+
+    <View
+        android:id="@+id/cuzdanNumarasi"
+        android:layout_width="320dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_border"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.965" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-Posta"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.316" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:text="Telefon Numarasi"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="296dp"
+        android:text="Yas"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/kullaniciYasi"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Cuzdan Numarasi"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.354" />
+
+    <Button
+        android:id="@+id/hesabimiSilButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:backgroundTint="#651FFF"
+        android:onClick="hesapSil"
+        android:text="Hesabimi Sil"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.407" />
+
+    <Button
+        android:id="@+id/cikisYapButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="160dp"
+        android:layout_height="47dp"
+        android:backgroundTint="#FF0000"
+        android:text="Cikis Yap"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.407" />
+
+    <TextView
+        android:id="@+id/kullanciAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kullanici Adi"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/kullaniciAdi"
+        app:layout_constraintEnd_toEndOf="@+id/kullaniciAdi"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="@+id/kullaniciAdi"
+        app:layout_constraintTop_toTopOf="@+id/kullaniciAdi"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
+        android:id="@+id/kullaniciePosta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-Posta"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ePosta"
+        app:layout_constraintEnd_toEndOf="@+id/ePosta"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/ePosta"
+        app:layout_constraintTop_toTopOf="@+id/ePosta"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
+        android:id="@+id/kullaniciTelNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefon Numarasi"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/telefonNumarasi"
+        app:layout_constraintEnd_toEndOf="@+id/telefonNumarasi"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/telefonNumarasi"
+        app:layout_constraintTop_toTopOf="@+id/telefonNumarasi" />
+
+    <TextView
+        android:id="@+id/kullaniciYas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yas"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/kullaniciYasi"
+        app:layout_constraintEnd_toEndOf="@+id/kullaniciYasi"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/kullaniciYasi"
+        app:layout_constraintTop_toTopOf="@+id/kullaniciYasi"
+        app:layout_constraintVertical_bias="0.437" />
+
+    <TextView
+        android:id="@+id/kullaniciCuzdanNumarasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cuzdan Numarasi"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cuzdanNumarasi"
+        app:layout_constraintEnd_toEndOf="@+id/cuzdanNumarasi"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="@+id/cuzdanNumarasi"
+        app:layout_constraintTop_toTopOf="@+id/cuzdanNumarasi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

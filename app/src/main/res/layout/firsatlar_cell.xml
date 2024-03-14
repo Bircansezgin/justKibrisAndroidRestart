@@ -68,12 +68,12 @@
                 android:layout_marginTop="15dp"
                 android:text="FirsatTarih"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/benimProfil"
                 app:layout_constraintStart_toEndOf="@+id/firsatImage"
                 app:layout_constraintTop_toBottomOf="@+id/firsatAciklama" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/benimProfil"
                 android:layout_width="85dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="12dp"
